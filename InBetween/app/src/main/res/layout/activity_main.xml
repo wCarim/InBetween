@@ -10,20 +10,20 @@
 
 
     <ImageView
-            android:layout_width="87dp"
-            android:layout_height="88dp"
+            android:layout_width="159dp"
+            android:layout_height="84dp"
             android:src="@drawable/appicon"
             android:id="@+id/imageView"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="83dp"
+            android:layout_marginTop="17dp"
             tools:srcCompat="@drawable/appicon" android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true" android:layout_marginEnd="163dp" android:layout_alignParentStart="true"
-            android:layout_marginStart="162dp"/>
+            android:layout_alignParentEnd="true" android:layout_marginEnd="286dp" android:layout_alignParentStart="true"
+            android:layout_marginStart="285dp"/>
     <TextView
             android:id="@+id/appname"
-            android:layout_width="wrap_content"
+            android:layout_width="308dp"
             android:layout_height="wrap_content"
             android:text="IN BETWEEN"
             android:textColor="@color/colorRed"
@@ -31,13 +31,13 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="22dp" app:layout_constraintHorizontal_bias="0.306"
+            android:layout_marginTop="9dp" app:layout_constraintHorizontal_bias="0.306"
             android:layout_below="@+id/imageView" android:layout_alignParentEnd="true"
-            android:layout_marginEnd="61dp" android:layout_alignParentStart="true" android:layout_marginStart="63dp"/>
+            android:layout_marginEnd="208dp" android:layout_alignParentStart="true" android:layout_marginStart="214dp"/>
     <Button
             android:id="@+id/btn1"
             android:layout_width="wrap_content"
-            android:layout_height="71dp"
+            android:layout_height="73dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:background="@drawable/startbutt"
@@ -45,14 +45,14 @@
             android:textSize="11sp"
             tools:ignore="MissingConstraints"
             app:layout_constraintTop_toBottomOf="@+id/appname"
-            android:layout_marginTop="37dp"
+            android:layout_marginTop="7dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.18" android:layout_marginStart="90dp"
-            android:layout_marginEnd="76dp" android:layout_below="@+id/appname"/>
+            app:layout_constraintHorizontal_bias="0.18" android:layout_marginStart="264dp"
+            android:layout_marginEnd="252dp" android:layout_below="@+id/appname"/>
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="62dp"
+            android:layout_height="69dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:background="@drawable/optbutt"
@@ -60,14 +60,14 @@
             android:textSize="11sp"
             tools:ignore="InvalidId,MissingConstraints"
             app:layout_constraintTop_toBottomOf="@+id/appname"
-            android:layout_marginTop="21dp"
+            android:layout_marginTop="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.178" android:layout_below="@+id/btn1"
-            android:layout_marginStart="56dp" android:layout_marginEnd="75dp"/>
+            android:layout_marginStart="244dp" android:layout_marginEnd="252dp"/>
     <Button
-            android:layout_width="245dp"
-            android:layout_height="67dp"
+            android:layout_width="wrap_content"
+            android:layout_height="69dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:background="@drawable/helpbutt"
@@ -77,9 +77,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.178"
-            android:layout_marginStart="82dp"
-            android:layout_marginEnd="84dp"
-            android:layout_marginTop="112dp"
+            android:layout_marginStart="254dp"
+            android:layout_marginEnd="253dp"
+            android:layout_marginTop="76dp"
             android:layout_below="@+id/btn1"/>
 
 
