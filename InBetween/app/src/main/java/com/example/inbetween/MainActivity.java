@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     public void master(int a, int b){
         int c = a + b;
     }
-    public void master(int a, int b){
+    public void master1(int a, int b){
         int c = a + b;
     }
 
