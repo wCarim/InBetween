@@ -45,10 +45,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity2.class);
         startActivity(intent);
     }
+
     public void openHelpActivity() {
         Intent intent = new Intent(this, HelpActivity.class);
         startActivity(intent);
     }
+
     public void openOptionsActivity() {
         Intent intent = new Intent(this, OptionsActivity.class);
         startActivity(intent);
