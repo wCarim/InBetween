@@ -9,29 +9,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
-    private Button startbutt, optbutt, helpbutt;
+    private Button btnStart, btnOpt, btnHelp;
     //TextView mytv; --wag mo na muna tanggalin tong mga comments ah? yan ung para sa fonts ng ating app
     //Typeface myfont;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.start_screen);
         //mytv = (TextView) findViewById(R.id.appname);
         //myfont = Typeface.createFromAsset(this.getAssets(),"fonts/casino.3d-filled-marquee-regular.ttf");
         //mytv.setTypeface(myfont);
 
 
-        startbutt = (Button) findViewById(R.id.startbutt);
-        startbutt.setOnClickListener(new View.OnClickListener() {
+        btnStart = (Button) findViewById(R.id.btnStart);
+        btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivity2();
             }
         });
 
-        optbutt = (Button) findViewById(R.id.optbutt);
-        optbutt.setOnClickListener(new View.OnClickListener() {
+        btnOpt = (Button) findViewById(R.id.btnOpt);
+        btnOpt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openOptionsActivity();
@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        helpbutt = (Button) findViewById(R.id.helpbutt);
-        helpbutt.setOnClickListener(new View.OnClickListener() {
+        btnHelp = (Button) findViewById(R.id.btnHelp);
+        btnHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openHelpActivity();
