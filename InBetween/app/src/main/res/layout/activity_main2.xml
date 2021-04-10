@@ -8,106 +8,97 @@
         android:background="@drawable/bg"
         tools:context=".MainActivity2">
 
-    <Button android:layout_width="170dp"
-            android:layout_height="42dp"
-            android:text="PLACE BET"
-            android:fontFamily="monospace"
-            android:textColor="@color/colorWhite"
-            android:background="@drawable/lightredbutt"
-            android:layout_marginTop="332dp"
-            android:id="@+id/betbutt"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="61dp"
-            android:layout_alignParentTop="true"/>
     <ImageView
             android:layout_width="160dp"
-            android:id="@+id/card1"
             android:layout_height="225dp"
+            android:id="@+id/firstCard"
             android:background="@drawable/back"
             android:layout_marginTop="23dp"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="27dp"/>
+            android:layout_marginLeft="54dp"/>
     <ImageView
             android:layout_width="160dp"
             android:layout_height="225dp"
-            android:id="@+id/card2"
+            android:id="@+id/secondCard"
             android:background="@drawable/back"
             android:layout_marginTop="24dp"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="85dp"
-            android:layout_toEndOf="@+id/card1"/>
+            android:layout_centerHorizontal="true"
+    />
 
+    <ImageView
+            android:layout_width="160dp"
+            android:layout_height="225dp"
+            android:id="@+id/thirdCard"
+            android:background="@drawable/back"
+            android:layout_marginTop="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/secondCard"
+            android:layout_marginLeft="69dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="54dp"/>
 
     <Button android:layout_width="170dp"
+            android:text="BET"
+            android:layout_height="42dp"
+            android:fontFamily="monospace"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="332dp"
+            android:id="@+id/btnBet"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="27dp"
+            android:layout_alignParentTop="false"/>
+    <Button
+            android:layout_width="170dp"
             android:layout_height="42dp"
             android:text="FOLD"
             android:fontFamily="monospace"
-            android:textColor="@color/colorBlack"
-            android:background="@drawable/lightyellowbutt"
-            android:layout_marginTop="332dp"
-            android:id="@+id/foldbutt"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="61dp"
-            android:layout_alignParentTop="true"/>
-    <ImageView
-            android:layout_width="160dp"
-            android:layout_height="225dp"
-            android:id="@+id/card3"
-            android:background="@drawable/back"
-            android:layout_marginTop="24dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="85dp"
-            android:layout_toEndOf="@+id/card2"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="54dp"/>
-    <EditText
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="BET COST"
-            android:textColor="@color/colorBlack"
-            android:textSize="20sp"
-            android:drawableStart="@drawable/custom_dollar_icon"
-            android:background="@drawable/custom_input"
-            android:ems="10"
-            android:fontFamily="monospace"
-            android:id="@+id/betcost"
-            android:layout_marginTop="335dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginEnd="49dp"
-            android:layout_toEndOf="@+id/foldbutt"
-            android:layout_toStartOf="@+id/betbutt"/>
-
-    <Button android:layout_width="170dp"
-            android:layout_height="42dp"
+            android:textColor="@color/colorWhite"
+            android:id="@+id/btnFold"
+            android:layout_marginLeft="27dp"
+            android:layout_below="@id/firstCard"
+            android:layout_marginTop="90dp"
+            android:layout_marginBottom="-8dp"/>
+    <Button
             android:text="HIGH"
-            android:fontFamily="monospace"
-            android:textColor="@color/colorBlack"
-            android:background="@drawable/lightgreenbutt"
-            android:visibility="invisible"
-            android:layout_marginTop="332dp"
-            android:id="@+id/highbutt"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="61dp"
-            android:layout_alignParentTop="true"
-            android:layout_toStartOf="@+id/betcost"
-            android:layout_marginEnd="47dp"/>
-
-    <Button android:layout_width="170dp"
+            android:layout_width="170dp"
             android:layout_height="42dp"
-            android:text="LOW"
             android:fontFamily="monospace"
             android:textColor="@color/colorWhite"
-            android:background="@drawable/lightbluebutt"
             android:layout_marginTop="332dp"
-            android:id="@+id/lowbutt"
-            android:layout_alignParentEnd="true"
+            android:id="@+id/btnHigh"
             android:visibility="invisible"
-            android:layout_marginEnd="61dp"
-            android:layout_alignParentTop="true" android:layout_toEndOf="@+id/betcost"
-            android:layout_marginStart="49dp"/>
+            android:layout_alignParentStart="false"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="27dp"
+            android:layout_alignParentTop="false"/>
+    <Button
+            android:text="LOW"
+            android:visibility="invisible"
+            android:id="@+id/btnLow"
+            android:layout_width="170dp"
+            android:layout_height="42dp"
+            android:fontFamily="monospace"
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="27dp"
+            android:layout_below="@id/firstCard"
+            android:layout_marginTop="90dp"
+            android:layout_marginBottom="-8dp"/>
+    <Button
+            android:text="REVEAL"
+            android:layout_width="170dp"
+            android:layout_height="42dp"
+            android:id="@+id/btnReveal"
+            android:visibility="invisible"
+            android:fontFamily="monospace"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="90dp"
+            android:layout_below="@id/secondCard"
+            android:layout_centerHorizontal="true"
+
+
+    />
 
 
 </RelativeLayout>
