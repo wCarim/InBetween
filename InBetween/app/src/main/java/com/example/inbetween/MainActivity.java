@@ -1,18 +1,26 @@
 package com.example.inbetween;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
     private Button startbutt, optbutt, helpbutt;
+    //TextView mytv; --wag mo na muna tanggalin tong mga comments ah? yan ung para sa fonts ng ating app
+    //Typeface myfont;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //mytv = (TextView) findViewById(R.id.appname);
+        //myfont = Typeface.createFromAsset(this.getAssets(),"fonts/casino.3d-filled-marquee-regular.ttf");
+        //mytv.setTypeface(myfont);
+
 
         startbutt = (Button) findViewById(R.id.startbutt);
         startbutt.setOnClickListener(new View.OnClickListener() {

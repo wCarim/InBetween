@@ -1,11 +1,14 @@
 package com.example.inbetween;
+/*
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
+*/
+
 
 public class codes {
-    private JLabel lblFirstCard;    private JLabel lblHiddenCard;    private JLabel lblSecondCard;
-    private JLabel lblMoney;    private JLabel lblText;    private JLabel lblCredits;
+    /*    private JLabel lblFirstCard;    private JLabel lblHiddenCard;    private JLabel lblSecondCard;
+  private JLabel lblMoney;    private JLabel lblText;    private JLabel lblCredits;
     private JButton btnBet;      private JButton btnFold;   private JButton btnHigh;    private JButton btnLow;
     private JButton btnRound;    private JButton btnStart;  private JButton btnReveal;
     private JPanel pnlOpen;    private JPanel pnlGame;    private JPanel pnlFull;
@@ -199,5 +202,5 @@ public class codes {
     public static int randomInt() {
         Random rand = new Random();
         return rand.nextInt(13) + 1;
-    }
+    }*/
 }
