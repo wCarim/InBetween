@@ -64,5 +64,20 @@
             android:layout_marginTop="186dp"
             android:layout_below="@+id/help"/>
 
+    <Button
+            android:layout_width="49dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/backbutt"
+            android:text="<"
+            android:textSize="35sp"
+            android:textColor="@color/colorBlack"
+            android:background="@drawable/backbutt"
+            android:layout_marginTop="17dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="18dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="664dp"
+            android:layout_alignParentTop="true"/>
+
 
 </RelativeLayout>

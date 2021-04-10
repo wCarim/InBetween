@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class HelpActivity extends AppCompatActivity {
-    private Button link;
+    private Button link, backbutt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,14 @@ public class HelpActivity extends AppCompatActivity {
             }
         });
 
+        backbutt = (Button) findViewById(R.id.startbutt);
+        backbutt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMainActivity();
+            }
+        });
+
 
 
     }
@@ -31,5 +39,9 @@ public class HelpActivity extends AppCompatActivity {
         Uri kineme = Uri.parse("https://bicyclecards.com/how-to-play/in-between/");
         Intent i = new Intent(Intent.ACTION_VIEW, kineme);
         startActivity(i);
+    }
+    public void openMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
