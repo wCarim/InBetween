@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class OptionsActivity extends AppCompatActivity {
-    private Button backbutt;
+    private Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,8 +15,8 @@ public class OptionsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_options);
 
 
-        backbutt = (Button) findViewById(R.id.startbutt);
-        backbutt.setOnClickListener(new View.OnClickListener() {
+        btnBack = (Button) findViewById(R.id.btnStart);
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMainActivity();

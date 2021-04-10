@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class HelpActivity extends AppCompatActivity {
-    private Button link, backbutt;
+    private Button link, btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +23,8 @@ public class HelpActivity extends AppCompatActivity {
             }
         });
 
-        backbutt = (Button) findViewById(R.id.startbutt);
-        backbutt.setOnClickListener(new View.OnClickListener() {
+        btnBack = (Button) findViewById(R.id.btnStart);
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMainActivity();

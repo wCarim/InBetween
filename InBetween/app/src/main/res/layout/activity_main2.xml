@@ -99,6 +99,23 @@
 
 
     />
+    <TextView
+            android:layout_width="170dp"
+            android:layout_height="42dp"
+            android:fontFamily="monospace"
+            android:textSize="16dp"
+            android:id="@+id/bet"
+            android:layout_below="@id/secondCard"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:hint="Enter bet here"
+            android:background="@color/colorWhite"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:maxLength="4"
+
+
+    />
 
 
 </RelativeLayout>
