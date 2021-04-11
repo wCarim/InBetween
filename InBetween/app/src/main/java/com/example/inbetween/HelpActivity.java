@@ -23,7 +23,7 @@ public class HelpActivity extends AppCompatActivity {
             }
         });
 
-        btnBack = (Button) findViewById(R.id.btnStart);
+        btnBack = (Button) findViewById(R.id.btnBack);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
