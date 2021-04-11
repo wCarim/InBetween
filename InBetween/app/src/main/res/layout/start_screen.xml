@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        tools:context=".MainActivity">
+
+    <ImageView
+            android:layout_width="159dp"
+            android:layout_height="84dp"
+            android:src="@drawable/appicon"
+            android:id="@+id/imageView"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="123dp" android:layout_marginTop="25dp" android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" android:layout_marginEnd="128dp"/>
+    <TextView
+            android:id="@+id/appname"
+            android:layout_width="327dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="IN BETWEEN"
+            android:textColor="@color/colorWhite"
+            android:textSize="50sp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="199dp" android:layout_marginTop="18dp" android:layout_below="@+id/imageView"
+            android:layout_alignParentEnd="true" android:layout_marginEnd="204dp"/>
+    <Button android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:fontFamily="monospace"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/appname"
+            android:id="@+id/btnStart"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="250dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="251dp"/>
+    <Button android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:fontFamily="monospace"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/btnStart"
+            android:id="@+id/btnOpt"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="250dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="251dp"/>
+    <Button android:layout_width="160dp"
+            android:layout_height="50dp"
+
+            android:fontFamily="monospace"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/btnOpt"
+            android:id="@+id/btnHelp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="250dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="251dp"/>
+
+
+</RelativeLayout>
