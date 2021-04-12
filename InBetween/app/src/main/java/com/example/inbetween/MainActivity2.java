@@ -79,7 +79,7 @@ public class MainActivity2 extends AppCompatActivity {
                     builder.setTitle("ERROR").setNeutralButton("OK", null);
                     builder.setMessage("You can't bet more than what you have");
                 }
-                betText.setText(bet);
+                betText.setText(String.valueOf(bet));
             }
         });
 
@@ -96,7 +96,7 @@ public class MainActivity2 extends AppCompatActivity {
                     builder.setMessage("You can't bet more than what you have");
                 }
 
-                betText.setText(bet);
+                betText.setText(String.valueOf(bet));
             }
         });
         btn70.setOnClickListener(new View.OnClickListener()
@@ -111,7 +111,7 @@ public class MainActivity2 extends AppCompatActivity {
                     builder.setMessage("You can't bet more than what you have");
                     Log.e("status", "ERROR");
                 }
-                betText.setText(bet);
+                betText.setText(String.valueOf(bet));
             }
         });
 
