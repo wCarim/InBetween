@@ -78,7 +78,6 @@ public class MainActivity2 extends AppCompatActivity {
                     final AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
                     builder.setTitle("ERROR").setNeutralButton("OK", null);
                     builder.setMessage("You can't bet more than what you have");
-                    Log.e("status", "ERROR");
                 }
                 betText.setText(bet);
             }
@@ -95,7 +94,6 @@ public class MainActivity2 extends AppCompatActivity {
                     final AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
                     builder.setTitle("ERROR").setNeutralButton("OK", null);
                     builder.setMessage("You can't bet more than what you have");
-                    Log.e("status", "ERROR");
                 }
 
                 betText.setText(bet);

@@ -11,12 +11,16 @@
             android:theme="@style/AppTheme"
     >
         <activity
+                android:screenOrientation="landscape"
                 android:name=".HelpActivity">
         </activity>
         <activity
+                android:screenOrientation="landscape"
                 android:name=".OptionsActivity">
         </activity>
-        <activity android:name=".MainActivity2">
+        <activity
+                android:screenOrientation="landscape"
+                android:name=".MainActivity2">
         </activity>
         <activity
                 android:screenOrientation="landscape"
