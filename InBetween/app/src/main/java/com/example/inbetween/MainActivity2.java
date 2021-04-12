@@ -24,9 +24,10 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        secondCard.setImageResource(R.drawable.back);
-        firstCard.setImageResource(R.drawable.back);
-        thirdCard.setImageResource(R.drawable.back);
+
+        firstCard =  findViewById(R.id.firstCard);
+        secondCard = findViewById(R.id.secondCard);
+        thirdCard =  findViewById(R.id.thirdCard);
         btnBet =     findViewById(R.id.btnBet);
         btnFold =    findViewById(R.id.btnFold);
         btnHigh =    findViewById(R.id.btnHigh);
@@ -36,10 +37,10 @@ public class MainActivity2 extends AppCompatActivity {
         btn20 =      findViewById(R.id.btn20);
         btn50 =      findViewById(R.id.btn50);
         btn70 =      findViewById(R.id.btn70);
-        firstCard =  findViewById(R.id.firstCard);
-        secondCard = findViewById(R.id.secondCard);
-        thirdCard =  findViewById(R.id.thirdCard);
         betText =    findViewById(R.id.bet);
+        secondCard.setImageResource(R.drawable.back);
+        firstCard.setImageResource(R.drawable.back);
+        thirdCard.setImageResource(R.drawable.back);
         btnRound.setOnClickListener(new View.OnClickListener()
         {
             @Override public void onClick(View v)
