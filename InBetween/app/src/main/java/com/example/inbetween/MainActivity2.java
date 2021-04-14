@@ -59,9 +59,7 @@ public class MainActivity2 extends AppCompatActivity {
                     secondCard.setImageResource(cards(second));
                     if (second > first && second < third || second < first && second > third) {
                         money += bet;
-                        final AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
-                        builder.setTitle("You've won").setNeutralButton("OK", null);
-                        builder.setMessage("Your card was In Between, Congratulations!!");
+                        alertWin();
                     } else {
                         money -= bet;
                         if (money < 1) {
@@ -82,7 +80,7 @@ public class MainActivity2 extends AppCompatActivity {
                 first = randomInt();
                 second = randomInt();
                 third = randomInt();
-                if (first + 1 == third || first-1 == third) {
+                if ((first + 1) == third || first == (third+1)) {
                     first = randomInt();
                 }
                 btnBetVisible();
@@ -94,7 +92,7 @@ public class MainActivity2 extends AppCompatActivity {
                 btn50Visible();
                 btn70Visible();
                 btnAllInVisible();
-                moneyText.setText(money);
+                moneyText.setText(String.valueOf(money));
                 bet = 0;
                 betText.setText("");
                 betText.setHint("YOUR BET");
@@ -171,13 +169,12 @@ public class MainActivity2 extends AppCompatActivity {
                 btn50Invisible();
                 btn70Invisible();
                 btnAllInInvisible();
-                money -= 10;
+                secondCard.setImageResource(cards(second));
                 if (money < 1){
                     alertBankrupt();
                 }
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
                 builder.setTitle("Folded").setNeutralButton("OK", null);
-                builder.setMessage("You've folded, -$10");
             }
         });
     }
@@ -243,9 +240,9 @@ public class MainActivity2 extends AppCompatActivity {
         btnAllIn.setVisibility(View.GONE); }
 
     public void alertBankrupt(){
-        final AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Bankrupt");
-        builder.setMessage("You've gone bankrupt, Game Over. \t Wanna play again?").setCancelable(false)
+        builder.setMessage("You've gone bankrupt, Game Over.\nWanna play again?")
                 .setPositiveButton("New Game", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         money = 1000;
@@ -257,6 +254,18 @@ public class MainActivity2 extends AppCompatActivity {
                         MainActivity2.this.finish();
                     }
                 });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+    public void alertWin(){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Winner");
+        builder.setMessage("Your card was In Between, Congratulations!!");
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {dialog.dismiss();
+                    }
+                });
+
         AlertDialog alert = builder.create();
         alert.show();
     }
@@ -280,7 +289,7 @@ public class MainActivity2 extends AppCompatActivity {
     }
     public static int randomInt()    {
         Random rand = new Random();
-        return rand.nextInt(13) + 1;
+        return rand.nextInt(12);
     }
 
 
