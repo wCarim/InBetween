@@ -50,11 +50,22 @@
             android:hint="YOUR BET"
             android:background="@drawable/custom_input"
             android:maxLength="4"
-            android:gravity="center"
+            android:gravity="center"/>
 
-
-
-    />
+    <TextView
+            android:layout_width="170dp"
+            android:layout_height="42dp"
+            android:fontFamily="monospace"
+            android:textSize="16dp"
+            android:id="@+id/money"
+            android:drawableStart="@drawable/custom_dollar_icon"
+            android:layout_below="@id/firstCard"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="50dp"
+            android:hint="YOUR MONEY"
+            android:background="@drawable/custom_input"
+            android:maxLength="4"
+            android:gravity="center"/>
 
     <Button android:layout_width="170dp"
             android:text="BET"
@@ -68,11 +79,26 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="27dp"
             android:layout_alignParentTop="false"
-            android:visibility="invisible"/>
+            android:visibility="gone"/>
+    <Button
+            android:layout_width="170dp"
+            android:text="START ROUND"
+            android:layout_height="42dp"
+            android:fontFamily="monospace"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="332dp"
+            android:id="@+id/btnRound"
+            android:background="@drawable/lightredbutt"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="27dp"
+            android:layout_alignParentTop="false"
+    />
     <Button
             android:layout_width="170dp"
             android:layout_height="42dp"
             android:text="FOLD"
+            android:visibility="invisible"
             android:fontFamily="monospace"
             android:background="@drawable/lightyellowbutt"
             android:textColor="@color/colorBlack"
@@ -109,10 +135,10 @@
             android:layout_marginTop="90dp"
             android:layout_marginBottom="-8dp"/>
     <Button
-            android:text="REVEAL"
+            android:text="ALL IN"
             android:layout_width="170dp"
             android:layout_height="42dp"
-            android:id="@+id/btnReveal"
+            android:id="@+id/btnAllIn"
             android:visibility="invisible"
             android:background="@drawable/lightgraybutt"
             android:fontFamily="monospace"
@@ -128,6 +154,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:fontFamily="monospace"
+            android:visibility="invisible"
             android:textColor="@color/colorWhite"
             android:layout_marginLeft="250dp"
             android:layout_below="@id/firstCard"
@@ -142,6 +169,7 @@
             android:fontFamily="monospace"
             android:textColor="@color/colorWhite"
             android:layout_marginLeft="350dp"
+            android:visibility="invisible"
             android:layout_below="@id/firstCard"
             android:layout_marginTop="90dp"
             android:layout_marginBottom="-8dp"/>
@@ -154,23 +182,11 @@
             android:fontFamily="monospace"
             android:textColor="@color/colorWhite"
             android:layout_marginLeft="450dp"
+            android:visibility="invisible"
             android:layout_below="@id/firstCard"
             android:layout_marginTop="90dp"
             android:layout_marginBottom="-8dp"/>
-    <Button
-            android:layout_width="170dp"
-            android:text="NEXT ROUND"
-            android:layout_height="42dp"
-            android:fontFamily="monospace"
-            android:textColor="@color/colorWhite"
-            android:layout_marginTop="332dp"
-            android:id="@+id/btnRound"
-            android:background="@drawable/lightredbutt"
-            android:layout_alignParentStart="false"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="27dp"
-            android:layout_alignParentTop="false"
-            />
+
 
 
 </RelativeLayout>

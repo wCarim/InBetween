@@ -1,7 +1,9 @@
 package com.example.inbetween;
 
+import android.content.DialogInterface;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,19 +14,19 @@ import android.os.Bundle;
 import java.util.Random;
 
 public class MainActivity2 extends AppCompatActivity {
-    private Button btnBet, btnFold, btnHigh, btnLow, btnReveal, btn20, btn50, btn70, btnRound;
+    private Button btnBet, btnFold, btnHigh, btnLow, btn20, btn50, btn70, btnRound, btnAllIn;
     private ImageView firstCard;
     private ImageView thirdCard;
     private ImageView secondCard;
-    private TextView betText;
+    private TextView betText, moneyText;
 
     int money = 1000, bet = 0, first, second, third;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main2);
-
         firstCard =  findViewById(R.id.firstCard);
         secondCard = findViewById(R.id.secondCard);
         thirdCard =  findViewById(R.id.thirdCard);
@@ -32,15 +34,47 @@ public class MainActivity2 extends AppCompatActivity {
         btnFold =    findViewById(R.id.btnFold);
         btnHigh =    findViewById(R.id.btnHigh);
         btnLow =     findViewById(R.id.btnLow);
-        btnReveal =  findViewById(R.id.btnReveal);
+        btnAllIn=    findViewById(R.id.btnAllIn);
         btnRound =   findViewById(R.id.btnRound);
         btn20 =      findViewById(R.id.btn20);
         btn50 =      findViewById(R.id.btn50);
         btn70 =      findViewById(R.id.btn70);
         betText =    findViewById(R.id.bet);
+        moneyText =    findViewById(R.id.money);
         secondCard.setImageResource(R.drawable.back);
         firstCard.setImageResource(R.drawable.back);
         thirdCard.setImageResource(R.drawable.back);
+
+        btnBet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnBetInvisible();
+                btnFoldInvisible();
+                btn20Invisible();
+                btn50Invisible();
+                btn70Invisible();
+                btnAllInInvisible();
+                btnRoundVisible();
+                if (first != third) {
+                    secondCard.setImageResource(cards(second));
+                    if (second > first && second < third || second < first && second > third) {
+                        money += bet;
+                        final AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+                        builder.setTitle("You've won").setNeutralButton("OK", null);
+                        builder.setMessage("Your card was In Between, Congratulations!!");
+                    } else {
+                        money -= bet;
+                        if (money < 1) {
+                            alertBankrupt();
+                            }
+                    }
+                } else {
+                    btnHighVisible();
+                    btnLowVisible();
+                }
+            }
+        });
+        btnRound =   findViewById(R.id.btnRound);
         btnRound.setOnClickListener(new View.OnClickListener()
         {
             @Override public void onClick(View v)
@@ -54,11 +88,13 @@ public class MainActivity2 extends AppCompatActivity {
                 btnBetVisible();
                 btnBet.setEnabled(false);
                 btnFoldVisible();
+                btnRound.setText("NEXT ROUND");
                 btnRoundInvisible();
-                btnRevealInvisible();
                 btn20Visible();
                 btn50Visible();
                 btn70Visible();
+                btnAllInVisible();
+                moneyText.setText(money);
                 bet = 0;
                 betText.setText("");
                 betText.setHint("YOUR BET");
@@ -115,23 +151,13 @@ public class MainActivity2 extends AppCompatActivity {
                 betText.setText(String.valueOf(bet));
             }
         });
-
-        btnBet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                        btnBetInvisible();
-                        btnFoldInvisible();
-                        btn20Invisible();
-                        btn50Invisible();
-                        btn70Invisible();
-                        if (firstCard != thirdCard) {
-                            btnRevealVisible();
-                        } else {
-                            btnHighVisible();
-                            btnLowVisible();
-                        }
-
-
+        btnAllIn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override public void onClick(View v)
+            {
+                bet = money;
+                btnBet.setEnabled(true);
+                betText.setText(String.valueOf(bet));
             }
         });
 
@@ -144,11 +170,16 @@ public class MainActivity2 extends AppCompatActivity {
                 btn20Invisible();
                 btn50Invisible();
                 btn70Invisible();
-
-
+                btnAllInInvisible();
+                money -= 10;
+                if (money < 1){
+                    alertBankrupt();
+                }
+                final AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+                builder.setTitle("Folded").setNeutralButton("OK", null);
+                builder.setMessage("You've folded, -$10");
             }
         });
-
     }
 
     public void btnBetVisible()      {
@@ -163,13 +194,6 @@ public class MainActivity2 extends AppCompatActivity {
     }
     public void btnFoldInvisible()   {
         btnFold.setVisibility(View.GONE);
-    }
-
-    public void btnRevealVisible()   {
-        btnReveal.setVisibility(View.VISIBLE);
-    }
-    public void btnRevealInvisible() {
-        btnReveal.setVisibility(View.GONE);
     }
 
     public void btnRoundVisible()    {
@@ -213,6 +237,29 @@ public class MainActivity2 extends AppCompatActivity {
     public void btn70Invisible()     {
         btn70.setVisibility(View.GONE); }
 
+    public void btnAllInVisible()       {
+        btnAllIn.setVisibility(View.VISIBLE); }
+    public void btnAllInInvisible()     {
+        btnAllIn.setVisibility(View.GONE); }
+
+    public void alertBankrupt(){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+        builder.setTitle("Bankrupt");
+        builder.setMessage("You've gone bankrupt, Game Over. \t Wanna play again?").setCancelable(false)
+                .setPositiveButton("New Game", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        money = 1000;
+                        btnRound.setText("START ROUND");
+                    }
+                })
+                .setNegativeButton("End Game", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        MainActivity2.this.finish();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
     public int cards(int n)          {
         Integer[] cards = {
                 R.drawable.cardace,
