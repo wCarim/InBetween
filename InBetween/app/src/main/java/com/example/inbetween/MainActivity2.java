@@ -60,11 +60,14 @@ public class MainActivity2 extends AppCompatActivity {
                     if (second > first && second < third || second < first && second > third) {
                         money += bet;
                         alertWin();
+                        moneyText.setText(String.valueOf(money));
                     } else {
                         money -= bet;
                         if (money < 1) {
+                            betText.setText("");
                             alertBankrupt();
                             }
+                        moneyText.setText(String.valueOf(money));
                     }
                 } else {
                     btnHighVisible();
@@ -72,7 +75,6 @@ public class MainActivity2 extends AppCompatActivity {
                 }
             }
         });
-        btnRound =   findViewById(R.id.btnRound);
         btnRound.setOnClickListener(new View.OnClickListener()
         {
             @Override public void onClick(View v)
@@ -80,7 +82,7 @@ public class MainActivity2 extends AppCompatActivity {
                 first = randomInt();
                 second = randomInt();
                 third = randomInt();
-                if ((first + 1) == third || first == (third+1)) {
+                while ((first + 1) == third || first - 1 == third){
                     first = randomInt();
                 }
                 btnBetVisible();
@@ -169,12 +171,29 @@ public class MainActivity2 extends AppCompatActivity {
                 btn50Invisible();
                 btn70Invisible();
                 btnAllInInvisible();
+                btnFoldInvisible();
                 secondCard.setImageResource(cards(second));
-                if (money < 1){
-                    alertBankrupt();
-                }
-                final AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
-                builder.setTitle("Folded").setNeutralButton("OK", null);
+                alertFold();
+            }
+        });
+        btnHigh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                secondCard.setImageResource(cards(second));
+                btnLowInvisible();
+                btnHighInvisible();
+                alertHigh();
+                moneyText.setText(String.valueOf(money));
+            }
+        });
+        btnLow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                secondCard.setImageResource(cards(second));
+                btnLowInvisible();
+                btnHighInvisible();
+                alertLow();
+                moneyText.setText(String.valueOf(money));
             }
         });
     }
@@ -257,15 +276,60 @@ public class MainActivity2 extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.show();
     }
+    public void alertHigh(){
+        if (second > first){
+            money += bet;
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Your card was higher, Congratulations!!");
+            builder.setTitle("You Win").setPositiveButton("OK", null);
+            AlertDialog alert = builder.create();
+            alert.show();
+        } else {
+            money -= bet;
+            if (money < 1) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("Your card was lower, Try again!!");
+                builder.setTitle("You Lost").setPositiveButton("OK",null);
+                AlertDialog alert = builder.create();
+                alert.show();
+                alertBankrupt();
+            }
+        }
+    }
+    public void alertLow(){
+        if (second < first){
+            money += bet;
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Your card was lower, Congratulations!!");
+            builder.setTitle("You Win").setPositiveButton("OK",null);
+            AlertDialog alert = builder.create();
+            alert.show();
+        } else {
+            money -= bet;
+            if (money < 1) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("Your card was higher, Try again!!");
+                builder.setTitle("You Lost").setPositiveButton("OK", null);
+                AlertDialog alert = builder.create();
+                alert.show();
+                betText.setText("");
+                alertBankrupt();
+            }
+        }
+    }
     public void alertWin(){
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Winner");
+        builder.setTitle("You win");
         builder.setMessage("Your card was In Between, Congratulations!!");
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {dialog.dismiss();
-                    }
-                });
+                builder.setPositiveButton("OK", null);
 
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+    public void alertFold(){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("You have folded, Try again!!").setPositiveButton("OK",null);
+        builder.setTitle("Folded").setPositiveButton("OK",null);
         AlertDialog alert = builder.create();
         alert.show();
     }
