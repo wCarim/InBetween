@@ -13,20 +13,19 @@ import android.os.Bundle;
 
 import java.util.Random;
 
-public class MainActivity2 extends AppCompatActivity {
-    private Button btnBet, btnFold, btnHigh, btnLow, btn20, btn50, btn70, btnRound, btnAllIn, btnClear;
+public class Game extends AppCompatActivity {
+    private Button btnBet, btnFold, btnHigh, btnLow, btn20, btn50, btn70, btnRound, btnAllIn, btnClear, btnBack;
     private ImageView firstCard;
     private ImageView thirdCard;
     private ImageView secondCard;
     private TextView betText, moneyText;
-
     int money = 1000, bet = 0, first, second, third;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_game);
         firstCard =  findViewById(R.id.firstCard);
         secondCard = findViewById(R.id.secondCard);
         thirdCard =  findViewById(R.id.thirdCard);
@@ -37,6 +36,7 @@ public class MainActivity2 extends AppCompatActivity {
         btnAllIn=    findViewById(R.id.btnAllIn);
         btnRound =   findViewById(R.id.btnRound);
         btnClear =   findViewById(R.id.btnClear);
+        btnBack =    findViewById(R.id.btnBack);
         btn20 =      findViewById(R.id.btn20);
         btn50 =      findViewById(R.id.btn50);
         btn70 =      findViewById(R.id.btn70);
@@ -46,6 +46,12 @@ public class MainActivity2 extends AppCompatActivity {
         firstCard.setImageResource(R.drawable.back);
         thirdCard.setImageResource(R.drawable.back);
 
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            alertBack();
+            }
+        });
         btnBet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,15 +67,14 @@ public class MainActivity2 extends AppCompatActivity {
                     if (second > first && second < third || second < first && second > third) {
                         money += bet;
                         alertWin();
-                        moneyText.setText(String.valueOf(money));
                     } else {
                         money -= bet;
                         if (money < 1) {
                             betText.setText("");
                             alertBankrupt();
                             }
-                        moneyText.setText(String.valueOf(money));
                     }
+                    moneyText.setText(String.valueOf(money));
                 } else {
                     btnHighVisible();
                     btnLowVisible();
@@ -279,7 +284,7 @@ public class MainActivity2 extends AppCompatActivity {
                 })
                 .setNegativeButton("End Game", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        MainActivity2.this.finish();
+                        Game.this.finish();
                     }
                 });
         AlertDialog alert = builder.create();
@@ -325,6 +330,19 @@ public class MainActivity2 extends AppCompatActivity {
                 alertBankrupt();
             }
         }
+    }
+    public void alertBack(){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Quit");
+        builder.setMessage("Are you sure you want to quit?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Game.this.finish();
+                    }
+                })
+                .setNeutralButton("No", null );
+        AlertDialog alert = builder.create();
+        alert.show();
     }
     public void alertWin(){
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);

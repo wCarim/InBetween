@@ -1,28 +1,19 @@
 package com.example.inbetween;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
-    private Button btnStart, btnOpt, btnHelp;
-    //TextView mytv; --wag mo na muna tanggalin tong mga comments ah? yan ung para sa fonts ng ating app
-    //Typeface myfont;
-
+public class StartScreen extends AppCompatActivity {
+    private Button btnStart, btnAboutUs, btnHelp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.start_screen);
-        //mytv = (TextView) findViewById(R.id.appname);
-        //myfont = Typeface.createFromAsset(this.getAssets(),"fonts/casino.3d-filled-marquee-regular.ttf");
-        //mytv.setTypeface(myfont);
-
 
         btnStart = (Button) findViewById(R.id.btnStart);
         btnStart.setOnClickListener(new View.OnClickListener() {
@@ -32,14 +23,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnOpt = (Button) findViewById(R.id.btnOpt);
-        btnOpt.setOnClickListener(new View.OnClickListener() {
+        btnAboutUs = (Button) findViewById(R.id.btnAboutUs);
+        btnAboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openOptionsActivity();
+                openAboutUsActivity();
             }
         });
-
 
         btnHelp = (Button) findViewById(R.id.btnHelp);
         btnHelp.setOnClickListener(new View.OnClickListener() {
@@ -52,17 +42,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void openActivity2() {
-        Intent intent = new Intent(this, MainActivity2.class);
+        Intent intent = new Intent(this, Game.class);
         startActivity(intent);
     }
 
     public void openHelpActivity() {
-        Intent intent = new Intent(this, HelpActivity.class);
+        Intent intent = new Intent(this, Help.class);
         startActivity(intent);
     }
 
-    public void openOptionsActivity() {
-        Intent intent = new Intent(this, OptionsActivity.class);
+    public void openAboutUsActivity() {
+        Intent intent = new Intent(this, AboutUs.class);
         startActivity(intent);
     }
 
