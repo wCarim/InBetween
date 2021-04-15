@@ -14,7 +14,7 @@ import android.os.Bundle;
 import java.util.Random;
 
 public class MainActivity2 extends AppCompatActivity {
-    private Button btnBet, btnFold, btnHigh, btnLow, btn20, btn50, btn70, btnRound, btnAllIn;
+    private Button btnBet, btnFold, btnHigh, btnLow, btn20, btn50, btn70, btnRound, btnAllIn, btnClear;
     private ImageView firstCard;
     private ImageView thirdCard;
     private ImageView secondCard;
@@ -36,11 +36,12 @@ public class MainActivity2 extends AppCompatActivity {
         btnLow =     findViewById(R.id.btnLow);
         btnAllIn=    findViewById(R.id.btnAllIn);
         btnRound =   findViewById(R.id.btnRound);
+        btnClear =   findViewById(R.id.btnClear);
         btn20 =      findViewById(R.id.btn20);
         btn50 =      findViewById(R.id.btn50);
         btn70 =      findViewById(R.id.btn70);
         betText =    findViewById(R.id.bet);
-        moneyText =    findViewById(R.id.money);
+        moneyText =  findViewById(R.id.money);
         secondCard.setImageResource(R.drawable.back);
         firstCard.setImageResource(R.drawable.back);
         thirdCard.setImageResource(R.drawable.back);
@@ -194,6 +195,14 @@ public class MainActivity2 extends AppCompatActivity {
                 btnHighInvisible();
                 alertLow();
                 moneyText.setText(String.valueOf(money));
+            }
+        });
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bet = 0;
+                betText.setText("");
+                btnBet.setEnabled(false);
             }
         });
     }
