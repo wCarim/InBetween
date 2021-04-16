@@ -8,14 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class StartScreen extends AppCompatActivity {
-    private Button btnStart, btnAboutUs, btnHelp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.start_screen);
 
-        btnStart = (Button) findViewById(R.id.btnStart);
+        Button btnStart = findViewById(R.id.btnStart);
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -23,7 +22,7 @@ public class StartScreen extends AppCompatActivity {
             }
         });
 
-        btnAboutUs = (Button) findViewById(R.id.btnAboutUs);
+        Button btnAboutUs = findViewById(R.id.btnAboutUs);
         btnAboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,7 +30,7 @@ public class StartScreen extends AppCompatActivity {
             }
         });
 
-        btnHelp = (Button) findViewById(R.id.btnHelp);
+        Button btnHelp = findViewById(R.id.btnHelp);
         btnHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

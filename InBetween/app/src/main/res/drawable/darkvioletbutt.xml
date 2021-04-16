@@ -15,7 +15,7 @@
     </stroke>
     <!--The radius makes the corners rounded-->
     <corners
-            android:radius="45dp">
+            android:radius="10dp">
 
     </corners>
 
