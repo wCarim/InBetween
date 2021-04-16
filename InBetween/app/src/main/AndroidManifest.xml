@@ -17,7 +17,7 @@
         </activity>
         <activity
                 android:screenOrientation="landscape"
-                android:name=".AboutUs">
+                android:name=".AboutGame">
         </activity>
         <activity
                 android:screenOrientation="landscape"

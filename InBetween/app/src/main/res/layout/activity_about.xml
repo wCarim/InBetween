@@ -5,24 +5,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg"
-        tools:context=".AboutUs">
+        tools:context=".AboutGame">
 
     <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/btnBack"
             android:background="@drawable/arrow2"
-            android:layout_marginTop="17dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="18dp"
-            />
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="25dp"
+    />
     <TextView
-            android:layout_alignParentTop="true"
             android:layout_width="501dp"
             android:layout_height="82dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/about"
-            android:textSize="50sp"
             android:fontFamily="@font/open_sans_extrabold"
             android:id="@+id/btnAboutUs"
             android:textAlignment="center"
@@ -35,7 +32,7 @@
             android:textSize="25sp"
             android:fontFamily="@font/open_sans_extrabold"
             android:text="In-between is a card game where a player is initially dealt 2 cards and if the 3rd card dealt falls in-between the 2 cards, the player wins! When the dealer deals 2 open cards. The player will have an option to bet on the 3rd card or fold. If the dealt cards have the same value, the player can bet if the 3rd card is higher or lower."
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="115dp"
             android:gravity="center"
             android:layout_centerHorizontal="true"
     />

@@ -52,7 +52,7 @@ public class StartScreen extends AppCompatActivity {
     }
 
     public void openAboutUsActivity() {
-        Intent intent = new Intent(this, AboutUs.class);
+        Intent intent = new Intent(this, AboutGame.class);
         startActivity(intent);
     }
 

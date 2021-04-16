@@ -217,10 +217,10 @@
 
 
     <Button
-            android:layout_width="59dp" android:layout_height="wrap_content"
+            android:layout_width="30dp" android:layout_height="30dp"
             android:background="@drawable/arrow2"
             android:id="@+id/btnBack"
-            android:layout_marginTop="14dp" android:layout_alignParentTop="true" android:layout_alignParentEnd="true"
-            android:layout_marginEnd="633dp" android:layout_alignParentStart="true" android:layout_marginStart="23dp"/>
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="25dp"/>
 
 </RelativeLayout>
